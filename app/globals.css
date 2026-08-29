@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #b37e44;
+    --primary-hover: #9c6b35;
+    --primary-light: #fbf5ee;
+    --primary-border: #ebd9c3;
+    
+    --bg-main: #fcfbfa;
+    --bg-card: #ffffff;
+    --bg-muted: #f6f3ee;
+    --bg-dark: #18181b;
+    
+    --text-main: #18181b;
+    --text-muted: #71717a;
+    --text-light: #a1a1aa;
+    
+    --border-light: #ede7df;
+    --border-subtle: #f0ebe4;
+    
+    --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+    --font-sans: var(--font-sans), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ede8;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfc6b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b5a997;
+}
+
+/* Layout and Container Utilities */
+.container-custom {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Button Components */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #b37e44;
+  color: #ffffff;
+  padding: 0.625rem 1.375rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(179, 126, 68, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background-color: #9c6b35;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(179, 126, 68, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  color: #18181b;
+  padding: 0.625rem 1.375rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 1px solid #ded5c8;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: #faf7f2;
+  border-color: #cac0b1;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
