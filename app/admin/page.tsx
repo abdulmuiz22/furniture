@@ -839,7 +839,6 @@ export default function AdminPage() {
               <div className="relative">
                 <input
                   type="password"
-                  placeholder="Enter passcode (Default: admin123)"
                   required
                   value={passcode}
                   onChange={(e) => setPasscode(e.target.value)}
