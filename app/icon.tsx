@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import fs from "fs";
+import path from "path";
 
 export const size = {
   width: 32,
@@ -7,6 +9,9 @@ export const size = {
 export const contentType = "image/png";
 
 export default function Icon() {
+  const markPath = path.join(process.cwd(), "public", "logo-mark.png");
+  const markBase64 = fs.readFileSync(markPath).toString("base64");
+
   return new ImageResponse(
     (
       <div
@@ -16,27 +21,15 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#b37e44",
+          background: "#18181b",
           borderRadius: "7px",
         }}
       >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M6 19v2" />
-          <path d="M18 19v2" />
-          <path d="M4 11a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5Z" />
-          <path d="M4 12h2a2 2 0 0 1 2 2v2H4v-4Z" />
-          <path d="M20 12h-2a2 2 0 0 0-2 2v2h4v-4Z" />
-          <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-        </svg>
+        <img
+          src={`data:image/png;base64,${markBase64}`}
+          alt="Icon"
+          style={{ width: "24px", height: "24px", objectFit: "contain" }}
+        />
       </div>
     ),
     {
@@ -44,3 +37,4 @@ export default function Icon() {
     }
   );
 }
+
