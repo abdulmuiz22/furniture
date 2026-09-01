@@ -516,7 +516,7 @@ export const COLLECTIONS: Collection[] = [
   {
     id: "best-sellers",
     slug: "best-sellers",
-    title: "Best Sellers 2024",
+    title: "Best Sellers 2026",
     subtitle: "Our most requested bespoke creations",
     description:
       "The quintessential pieces most celebrated by our residential and architectural clients across Nigeria for exceptional durability and beauty.",

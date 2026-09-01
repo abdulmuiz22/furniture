@@ -190,7 +190,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-[#27272a] bg-[#141416] py-5">
         <div className="container-custom flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#71717a]">
-          <p>© 2024 Sassy Furniture. All Rights Reserved.</p>
+          <p>© 2026 Sassy Furniture. All Rights Reserved.</p>
           <div className="flex items-center gap-2 text-xs text-[#a1a1aa] font-medium">
             <span className="text-[#b37e44]">✨</span>
             <span>Handcrafted Bespoke Furniture &bull; Ila Orangun, Osun State</span>

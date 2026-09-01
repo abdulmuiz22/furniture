@@ -19,7 +19,7 @@ const ROOM_ITEMS = [
 const COLLECTION_ITEMS = [
   { name: "Minimalist Essentials", href: "/collections/minimalist-essentials", tag: "New Season" },
   { name: "Signature Suites", href: "/collections/signature-suites", tag: "Luxury" },
-  { name: "Best Sellers 2024", href: "/collections/best-sellers", tag: "Popular" },
+  { name: "Best Sellers 2026", href: "/collections/best-sellers", tag: "Popular" },
   { name: "Artisan Woodcraft", href: "/collections/artisan-woodcraft", tag: "Heritage" },
 ];
 
