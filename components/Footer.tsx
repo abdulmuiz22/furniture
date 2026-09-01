@@ -149,10 +149,14 @@ export default function Footer() {
 
           {/* Column 2: Client Care & Services */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-white tracking-wide uppercase">Bespoke Services</h4>
+            <h4 className="text-xs font-semibold text-white tracking-wide uppercase">
+              <Link href="/contact" className="hover:text-[#b37e44] transition-colors">
+                Bespoke Services
+              </Link>
+            </h4>
             <ul className="space-y-2 text-xs text-[#a1a1aa]">
               <li><Link href="/contact" className="hover:text-[#b37e44] transition-colors">Consultation Booking</Link></li>
-              <li><Link href="/about" className="hover:text-[#b37e44] transition-colors">Custom Design Process</Link></li>
+              <li><Link href="/about#custom-process" className="hover:text-[#b37e44] transition-colors">Custom Design Process</Link></li>
               <li><Link href="/about" className="hover:text-[#b37e44] transition-colors">Timber &amp; Craftsmanship</Link></li>
               <li><Link href="/contact" className="hover:text-[#b37e44] transition-colors">Showroom Visits</Link></li>
               <li><Link href="/admin" className="hover:text-[#b37e44] transition-colors">Admin Portal</Link></li>
@@ -173,11 +177,17 @@ export default function Footer() {
 
           {/* Column 4: Contact Us */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-white tracking-wide">Contact Us</h4>
+            <h4 className="text-xs font-semibold text-white tracking-wide uppercase">
+              <Link href="/contact" className="hover:text-[#b37e44] transition-colors">
+                Contact Us
+              </Link>
+            </h4>
             <div className="space-y-2.5 text-xs text-[#a1a1aa]">
               <p className="flex items-start gap-2">
                 <span className="text-[#b37e44] mt-0.5">📍</span>
-                <span>Number 15 Ajegunle, Ila Orangun, Osun State, Nigeria</span>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Number 15 Ajegunle, Ila Orangun, Osun State, Nigeria
+                </Link>
               </p>
               <p className="flex items-center gap-2">
                 <span className="text-[#b37e44]">📞</span>
@@ -193,7 +203,9 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2 text-[11px] text-[#71717a]">
                 <span className="text-[#b37e44]">⏰</span>
-                <span>24/7 Inquiries &amp; Showroom Visits</span>
+                <Link href="/contact" className="hover:text-[#a1a1aa] transition-colors">
+                  24/7 Inquiries &amp; Showroom Visits
+                </Link>
               </p>
             </div>
           </div>
@@ -204,10 +216,10 @@ export default function Footer() {
       <div className="border-t border-[#27272a] bg-[#141416] py-5">
         <div className="container-custom flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#71717a]">
           <p>© 2026 Sassy Furniture. All Rights Reserved.</p>
-          <div className="flex items-center gap-2 text-xs text-[#a1a1aa] font-medium">
+          <Link href="/contact" className="flex items-center gap-2 text-xs text-[#a1a1aa] hover:text-[#b37e44] font-medium transition-colors">
             <span className="text-[#b37e44]">✨</span>
             <span>Handcrafted Bespoke Furniture &bull; Ila Orangun, Osun State</span>
-          </div>
+          </Link>
         </div>
       </div>
     </footer>

@@ -8,12 +8,12 @@ import { Search, User, Heart, ChevronDown, Menu, X, Shield, Sparkles, ArrowRight
 import { useShop } from "@/context/ShopContext";
 
 const ROOM_ITEMS = [
-  { name: "Living Room", href: "/rooms/living-room", desc: "Plush sofas & accent tables" },
-  { name: "Bedroom", href: "/rooms/bedroom", desc: "Platform beds & nightstands" },
-  { name: "Dining Room", href: "/rooms/dining-room", desc: "Solid oak dining tables & chairs" },
-  { name: "Office", href: "/rooms/office", desc: "Ergonomic seating & executive desks" },
-  { name: "Outdoor", href: "/rooms/outdoor", desc: "Weatherproof teak lounges" },
-  { name: "Decor & Lighting", href: "/rooms/decor-and-lighting", desc: "Ambient lamps & artisan accents" },
+  { name: "Living Room", href: "/rooms/living-room" },
+  { name: "Bedroom", href: "/rooms/bedroom" },
+  { name: "Dining Room", href: "/rooms/dining-room" },
+  { name: "Office", href: "/rooms/office" },
+  { name: "Outdoor", href: "/rooms/outdoor" },
+  { name: "Decor & Lighting", href: "/rooms/decor-and-lighting" },
 ];
 
 const COLLECTION_ITEMS = [
@@ -112,7 +112,7 @@ export default function Navbar() {
             </Link>
 
             {activeDropdown === "rooms" && (
-              <div className="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-[#ede7df] p-2 animate-fade-in z-50">
+              <div className="absolute top-full left-0 w-56 bg-white rounded-2xl shadow-2xl border border-[#ede7df] p-2 animate-fade-in z-50">
                 <div className="px-3 py-1.5 border-b border-[#f0ebe4] mb-1 flex items-center justify-between">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-[#a1a1aa]">
                     Browse Rooms
@@ -129,10 +129,9 @@ export default function Navbar() {
                   <Link
                     key={room.href}
                     href={room.href}
-                    className="w-full text-left block px-3 py-2 rounded-xl text-xs text-[#3f3f46] hover:bg-[#fbf7f2] hover:text-[#b37e44] transition-colors"
+                    className="w-full text-left block px-3 py-2 rounded-xl text-xs font-semibold text-[#1c1917] hover:bg-[#fbf7f2] hover:text-[#b37e44] transition-colors"
                   >
-                    <span className="font-semibold block text-[#1c1917]">{room.name}</span>
-                    <span className="text-[10px] text-[#78716c]">{room.desc}</span>
+                    {room.name}
                   </Link>
                 ))}
               </div>

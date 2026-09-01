@@ -138,7 +138,7 @@ export default function AboutPage() {
         </section>
 
         {/* Bespoke Custom Process Step-by-Step */}
-        <section className="w-full bg-white border-y border-[#eee8df] py-16 sm:py-24">
+        <section id="custom-process" className="w-full bg-white border-y border-[#eee8df] py-16 sm:py-24 scroll-mt-20">
           <div className="container-custom">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#b37e44] block mb-2">
@@ -193,7 +193,7 @@ export default function AboutPage() {
         </section>
 
         {/* Workshop Location & CTA Section */}
-        <section className="container-custom mt-20">
+        <section id="showroom" className="container-custom mt-20 scroll-mt-20">
           <div className="rounded-3xl bg-[#18181b] text-white p-8 sm:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 border border-[#27272a]">
             <div className="max-w-xl space-y-4 text-left">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#d49753] block">
