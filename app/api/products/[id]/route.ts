@@ -3,25 +3,55 @@ import { connectToDatabase } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import { deleteMediaFromCloudinary } from "@/lib/cloudinary";
 
+import mongoose from "mongoose";
+import { BEST_SELLERS, getProductByIdOrSlug } from "@/data/furnitureData";
+
 export const dynamic = "force-dynamic";
 
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
+  const decodedId = decodeURIComponent(id);
+
   try {
-    const { id } = await params;
     await connectToDatabase();
 
-    const product = await Product.findById(id);
+    let product = null;
+
+    if (mongoose.isValidObjectId(decodedId)) {
+      product = await Product.findById(decodedId);
+    }
+
     if (!product) {
+      // Try searching by name or custom id
+      product = await Product.findOne({
+        $or: [
+          { _id: decodedId },
+          { name: { $regex: `^${decodedId.replace(/-/g, " ")}$`, $options: "i" } },
+          { name: { $regex: decodedId.replace(/-/g, " "), $options: "i" } },
+        ],
+      });
+    }
+
+    if (!product) {
+      // Check fallback data
+      const fallback = getProductByIdOrSlug(decodedId, BEST_SELLERS);
+      if (fallback) {
+        return NextResponse.json({ success: true, data: fallback, isFallback: true });
+      }
       return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 });
     }
 
     return NextResponse.json({ success: true, data: product });
   } catch (error) {
-    console.error("Error fetching product:", error);
-    return NextResponse.json({ success: false, error: "Failed to fetch product" }, { status: 500 });
+    console.warn("Error fetching product from DB, checking fallback:", error);
+    const fallback = getProductByIdOrSlug(decodedId, BEST_SELLERS);
+    if (fallback) {
+      return NextResponse.json({ success: true, data: fallback, isFallback: true });
+    }
+    return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 });
   }
 }
 

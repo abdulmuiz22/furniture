@@ -20,7 +20,6 @@ import {
   Mail,
   Lock,
   Eye,
-  Database,
   Cloud,
   Check,
   X,
@@ -30,7 +29,6 @@ import {
   Film,
   Play,
   Maximize2,
-  FolderOpen,
   Filter,
   CheckSquare,
 } from "lucide-react";

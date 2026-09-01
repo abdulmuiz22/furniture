@@ -73,22 +73,22 @@ export default function PromoBanners() {
                 Timeless designs for modern spaces.
               </p>
 
-              <button
-                onClick={handleDiscoverClick}
-                className="btn-primary text-xs sm:text-sm py-2.5 px-5 rounded-lg cursor-pointer"
+              <Link
+                href="/collections/minimalist-essentials"
+                className="btn-primary text-xs sm:text-sm py-2.5 px-5 rounded-lg"
               >
                 Discover Collection
-              </button>
+              </Link>
             </div>
           </div>
 
-          {/* Right Promo Card: Exclusive Offer (Dark Luxury Theme) */}
+          {/* Right Promo Card: Signature Living (Dark Luxury Theme) */}
           <div className="relative rounded-3xl overflow-hidden bg-[#18181b] border border-[#27272a] p-7 sm:p-9 flex flex-col justify-between min-h-[340px] sm:min-h-[380px]">
             {/* Background / Right floating image */}
             <div className="absolute right-0 bottom-0 top-0 w-1/2 sm:w-7/12 pointer-events-none">
               <Image
                 src={promo2Url}
-                alt="Exclusive Offer Luxury Velvet Sofa"
+                alt="Architectural Elegance Luxury Velvet Sofa"
                 fill
                 sizes="(max-width: 1024px) 50vw, 30vw"
                 className="object-cover object-center opacity-70"
@@ -99,20 +99,21 @@ export default function PromoBanners() {
             {/* Left Content */}
             <div className="relative z-10 max-w-[260px] sm:max-w-[300px] flex flex-col items-start">
               <span className="inline-block text-[11px] font-semibold tracking-wide text-[#d49753] mb-2">
-                Exclusive Offer
+                Signature Living
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif text-white leading-tight mb-2">
-                Up to 30% Off
+                Architectural <br />
+                Elegance
               </h3>
               <p className="text-xs sm:text-[13px] text-[#a1a1aa] mb-7 font-normal leading-relaxed">
-                On selected items this season.
+                Handcrafted statement pieces designed for timeless comfort.
               </p>
 
               <Link
-                href="#best-sellers"
+                href="/collections/signature-suites"
                 className="btn-primary text-xs sm:text-sm py-2.5 px-5 rounded-lg"
               >
-                Shop The Sale
+                Explore Signature Suites
               </Link>
             </div>
           </div>

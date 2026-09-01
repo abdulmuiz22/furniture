@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MapPin, Truck, Phone, Mail } from "lucide-react";
+import { MapPin, Sparkles, Phone, Mail } from "lucide-react";
 
 export default function TopBar() {
   return (
@@ -11,15 +11,15 @@ export default function TopBar() {
         <div className="flex items-center gap-1.5 hover:text-[#18181b] transition-colors cursor-pointer">
           <MapPin size={13} className="text-[#b37e44]" />
           <span>
-            Deliver to: <strong className="font-medium text-[#27272a]">Ila Orangun & Nationwide, Nigeria</strong>
+            Showroom & Workshop: <strong className="font-medium text-[#27272a]">Ila Orangun, Osun State, Nigeria</strong>
           </span>
         </div>
 
-        {/* Center: 24/7 Service & Free Delivery */}
+        {/* Center: Bespoke Craftsmanship */}
         <div className="flex items-center gap-1.5 text-[#3f3f46]">
-          <Truck size={14} className="text-[#b37e44]" />
+          <Sparkles size={14} className="text-[#b37e44]" />
           <span className="font-normal">
-            <strong className="font-semibold text-[#b37e44]">24/7 Service</strong> &bull; Free Delivery on orders above <strong className="font-semibold text-[#18181b]">₦500,000</strong>
+            <strong className="font-semibold text-[#b37e44]">Bespoke Craftsmanship</strong> &bull; Custom Architectural Sizing &amp; Tailored Finishes
           </span>
         </div>
 

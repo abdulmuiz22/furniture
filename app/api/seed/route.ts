@@ -61,7 +61,7 @@ export async function POST() {
         email: "amaka.adeleke@example.com",
         phone: "+234 803 456 7890",
         productName: "Luna Fabric Sofa",
-        message: "Hello, I am interested in customizing the Luna Fabric Sofa in a dark emerald velvet finish. What is the delivery timeframe for orders from your Ila Orangun workshop?",
+        message: "Hello, I am interested in customizing the Luna Fabric Sofa in a dark emerald velvet finish. What is the custom crafting timeframe for bespoke pieces from your Ila Orangun workshop?",
         status: "new",
       },
       {

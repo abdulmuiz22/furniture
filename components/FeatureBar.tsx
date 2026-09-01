@@ -1,32 +1,32 @@
 "use client";
 
 import React from "react";
-import { Sparkles, Truck, RotateCcw, Headphones } from "lucide-react";
+import { Sparkles, Palette, ShieldCheck, Headphones } from "lucide-react";
 
 export default function FeatureBar() {
   const features = [
     {
       id: "quality",
       title: "Premium Quality",
-      description: "Crafted with the finest materials",
+      description: "Crafted with the finest timber & fabrics",
       icon: <Sparkles size={18} className="text-[#b37e44]" />,
     },
     {
-      id: "delivery",
-      title: "Free Delivery",
-      description: "On orders above ₦500,000",
-      icon: <Truck size={18} className="text-[#b37e44]" />,
+      id: "customization",
+      title: "Bespoke Customization",
+      description: "Tailored spatial sizing & finishes",
+      icon: <Palette size={18} className="text-[#b37e44]" />,
     },
     {
-      id: "returns",
-      title: "Easy Returns",
-      description: "30 days return policy",
-      icon: <RotateCcw size={18} className="text-[#b37e44]" />,
+      id: "guarantee",
+      title: "Artisan Guarantee",
+      description: "5-Year structural warranty",
+      icon: <ShieldCheck size={18} className="text-[#b37e44]" />,
     },
     {
       id: "support",
-      title: "24/7 Support",
-      description: "Call or WhatsApp 08130575312",
+      title: "Design Concierge",
+      description: "Direct consultation: 08130575312",
       icon: <Headphones size={18} className="text-[#b37e44]" />,
     },
   ];

@@ -68,18 +68,24 @@ export default function AboutSection() {
               </div>
               <div className="flex items-center gap-2.5 text-xs font-semibold text-[#27272a]">
                 <CheckCircle size={16} className="text-[#b37e44]" />
-                <span>Nationwide Delivery & Setup</span>
+                <span>Artisan Hand-Finishing &amp; Setup</span>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="pt-3">
+            <div className="pt-3 flex flex-wrap items-center gap-3">
               <Link
-                href="#contact"
+                href="/about"
                 className="btn-primary inline-flex items-center gap-2"
               >
-                <span>Schedule Private Viewing</span>
+                <span>Read Full Brand Story</span>
                 <ArrowRight size={15} />
+              </Link>
+              <Link
+                href="/contact"
+                className="btn-secondary inline-flex items-center gap-2"
+              >
+                <span>Schedule Private Viewing</span>
               </Link>
             </div>
           </div>

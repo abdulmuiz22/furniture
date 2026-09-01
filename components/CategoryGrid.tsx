@@ -4,11 +4,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Armchair, Bed, Utensils, Laptop, Sun, Lamp } from "lucide-react";
-import { CATEGORIES, MediaAsset } from "@/data/furnitureData";
-import { useShop } from "@/context/ShopContext";
+import { CATEGORIES, MediaAsset, getRoomSlug } from "@/data/furnitureData";
 
 export default function CategoryGrid() {
-  const { setSelectedCategory } = useShop();
   const [categoryMedia, setCategoryMedia] = useState<Record<string, string>>({});
 
   useEffect(() => {
@@ -57,14 +55,6 @@ export default function CategoryGrid() {
     }
   };
 
-  const handleCategoryClick = (categoryName: string) => {
-    setSelectedCategory(categoryName);
-    const element = document.getElementById("best-sellers");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="categories" className="w-full py-12 sm:py-16 bg-[#fcfbfa]">
       <div className="container-custom">
@@ -76,8 +66,7 @@ export default function CategoryGrid() {
             </h2>
           </div>
           <Link
-            href="#categories"
-            onClick={() => setSelectedCategory("All")}
+            href="/rooms"
             className="group inline-flex items-center gap-1 text-xs sm:text-[13px] font-medium text-[#78716c] hover:text-[#b37e44] transition-colors"
           >
             <span>View All Categories</span>
@@ -87,39 +76,42 @@ export default function CategoryGrid() {
 
         {/* 6 Category Cards Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
-          {CATEGORIES.map((category) => (
-            <div
-              key={category.id}
-              onClick={() => handleCategoryClick(category.name)}
-              className="group flex flex-col cursor-pointer"
-            >
-              {/* Card Image Container */}
-              <div className="relative aspect-[4/3.7] w-full rounded-2xl overflow-hidden bg-[#f0ebe3] border border-[#e8e2d8] transition-all duration-300 group-hover:shadow-md group-hover:border-[#d9cfc1]">
-                <Image
-                  src={categoryMedia[category.name.toLowerCase()] || category.image}
-                  alt={category.name}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+          {CATEGORIES.map((category) => {
+            const slug = getRoomSlug(category.name);
+            return (
+              <Link
+                key={category.id}
+                href={`/rooms/${slug}`}
+                className="group flex flex-col cursor-pointer"
+              >
+                {/* Card Image Container */}
+                <div className="relative aspect-[4/3.7] w-full rounded-2xl overflow-hidden bg-[#f0ebe3] border border-[#e8e2d8] transition-all duration-300 group-hover:shadow-md group-hover:border-[#d9cfc1]">
+                  <Image
+                    src={categoryMedia[category.name.toLowerCase()] || category.image}
+                    alt={category.name}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
-                {/* Floating Icon Badge at Top-Left */}
-                <div className="absolute top-2 left-2 w-7 h-7 rounded-lg bg-white/85 backdrop-blur-md border border-white/60 flex items-center justify-center shadow-2xs transition-transform group-hover:scale-110">
-                  {getCategoryBadgeIcon(category.icon)}
+                  {/* Floating Icon Badge at Top-Left */}
+                  <div className="absolute top-2 left-2 w-7 h-7 rounded-lg bg-white/85 backdrop-blur-md border border-white/60 flex items-center justify-center shadow-2xs transition-transform group-hover:scale-110">
+                    {getCategoryBadgeIcon(category.icon)}
+                  </div>
                 </div>
-              </div>
 
-              {/* Title & Count */}
-              <div className="mt-2.5 text-left">
-                <h3 className="text-xs sm:text-sm font-semibold text-[#1c1917] group-hover:text-[#b37e44] transition-colors">
-                  {category.name}
-                </h3>
-                <p className="text-[11px] text-[#8c827a] mt-0.5 font-normal">
-                  {category.itemCount}
-                </p>
-              </div>
-            </div>
-          ))}
+                {/* Title & Count */}
+                <div className="mt-2.5 text-left">
+                  <h3 className="text-xs sm:text-sm font-semibold text-[#1c1917] group-hover:text-[#b37e44] transition-colors">
+                    {category.name}
+                  </h3>
+                  <p className="text-[11px] text-[#8c827a] mt-0.5 font-normal">
+                    {category.itemCount}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

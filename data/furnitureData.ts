@@ -148,11 +148,11 @@ export const INITIAL_MEDIA_ASSETS: MediaAsset[] = [
   },
   {
     id: "media-promo-exclusive",
-    title: "Promo: Exclusive Offer Up to 30% Off",
+    title: "Promo: Architectural Living & Signature Suites",
     section: "promo",
     mediaType: "image",
     url: "/images/promo-exclusive.jpg",
-    caption: "Seasonal promotion banner for luxury upholstered suites",
+    caption: "Showcase collection of luxury handcrafted furniture and bespoke suites",
     linkUrl: "#best-sellers",
     order: 9,
     isActive: true,
@@ -379,31 +379,230 @@ export const BEST_SELLERS: Product[] = [
     inStock: true,
     featured: true,
   },
+  {
+    id: "sorrento-teak-lounge",
+    name: "Sorrento Outdoor Teak Lounge",
+    category: "Outdoor",
+    rating: 4.8,
+    reviewsCount: 14,
+    image: "/images/cat-outdoor.jpg",
+    description:
+      "Weather-resistant Grade-A teak lounge with quick-dry foam cushions and sun-proof water-repellent canvas fabric.",
+    dimensions: "W 190cm x D 85cm x H 75cm",
+    material: "Weatherproof Solid Teak & Sunbrella Canvas",
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: "kyoto-executive-desk",
+    name: "Kyoto Executive Desk",
+    category: "Office",
+    rating: 4.9,
+    reviewsCount: 19,
+    image: "/images/cat-office.jpg",
+    description:
+      "Architectural executive writing desk with concealed cable management, dual soft-close drawers, and brushed brass details.",
+    dimensions: "W 160cm x D 75cm x H 76cm",
+    material: "Walnut Hardwood & Brushed Brass",
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: "verona-dining-chairs-set",
+    name: "Verona Sculptural Dining Chairs (Set of 2)",
+    category: "Dining Room",
+    rating: 4.7,
+    reviewsCount: 16,
+    image: "/images/cat-dining-room.jpg",
+    description:
+      "Curved backrest dining chairs with supportive lumbar contouring and stain-resistant velvet fabric.",
+    dimensions: "W 54cm x D 56cm x H 80cm",
+    material: "Solid Beechwood & Performance Velvet",
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: "celeste-boucle-armchair",
+    name: "Celeste Bouclé Accent Armchair",
+    category: "Living Room",
+    rating: 4.9,
+    reviewsCount: 28,
+    image: "/images/promo-minimalist.jpg",
+    description:
+      "Cocoon-like curved accent chair upholstered in ultra-soft ivory bouclé with hidden 360-degree smooth swivel base.",
+    dimensions: "W 88cm x D 85cm x H 78cm",
+    material: "Textured Wool Bouclé & Hardwood Base",
+    inStock: true,
+    featured: true,
+  },
+  {
+    id: "solis-ceramic-pendant",
+    name: "Solis Artisan Ceramic Pendant Light",
+    category: "Decor & Lighting",
+    rating: 4.8,
+    reviewsCount: 13,
+    image: "/images/cat-decor.jpg",
+    description:
+      "Hand-thrown terracotta ceramic pendant with subtle ribbed texture and warm dimmable ambient glow.",
+    dimensions: "Dia 35cm x H 28cm (Cord: 150cm)",
+    material: "Handcrafted Ceramic & Brass Hardware",
+    inStock: true,
+    featured: false,
+  },
+  {
+    id: "monaco-nightstand-pair",
+    name: "Monaco Fluted Nightstands (Pair)",
+    category: "Bedroom",
+    rating: 4.7,
+    reviewsCount: 22,
+    image: "/images/cat-bedroom.jpg",
+    description:
+      "Modern bedside tables featuring hand-fluted oak drawer fronts and natural honed marble tops.",
+    dimensions: "W 50cm x D 42cm x H 52cm",
+    material: "Solid White Oak & Natural Marble",
+    inStock: true,
+    featured: false,
+  },
 ];
+
+export interface Collection {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  itemCount: string;
+  tag: string;
+  featuredCategory?: string;
+  highlights: string[];
+}
+
+export const COLLECTIONS: Collection[] = [
+  {
+    id: "minimalist-essentials",
+    slug: "minimalist-essentials",
+    title: "Minimalist Essentials",
+    subtitle: "Timeless designs for modern spaces",
+    description:
+      "A curated harmony of clean silhouettes, organic tactile fabrics, and natural wood grains engineered for serene, uncluttered living.",
+    image: "/images/promo-minimalist.jpg",
+    itemCount: "14 Pieces",
+    tag: "New Season",
+    featuredCategory: "Living Room",
+    highlights: [
+      "Kiln-dried solid oak & beechwood framing",
+      "Neutral textured bouclé & pure linen upholstery",
+      "Concealed joinery and seamless ergonomic curves",
+    ],
+  },
+  {
+    id: "signature-suites",
+    slug: "signature-suites",
+    title: "Signature Suites",
+    subtitle: "Architectural statement living",
+    description:
+      "Handcrafted masterworks characterized by bold proportions, rich textural contrast, and bespoke luxury tailoring for discerning homes.",
+    image: "/images/promo-exclusive.jpg",
+    itemCount: "18 Pieces",
+    tag: "Luxury Edition",
+    featuredCategory: "Living Room",
+    highlights: [
+      "Custom spatial dimensions built to your room layout",
+      "High-density multi-layer comfort core foam",
+      "5-Year structural warranty backed by our Ila Orangun workshop",
+    ],
+  },
+  {
+    id: "best-sellers",
+    slug: "best-sellers",
+    title: "Best Sellers 2024",
+    subtitle: "Our most requested bespoke creations",
+    description:
+      "The quintessential pieces most celebrated by our residential and architectural clients across Nigeria for exceptional durability and beauty.",
+    image: "/images/hero.jpg",
+    itemCount: "12 Pieces",
+    tag: "Popular Choice",
+    featuredCategory: "All",
+    highlights: [
+      "Proven durability for active family & executive spaces",
+      "Comprehensive fabric swatch customization",
+      "Ready for priority consultation & swift workshop scheduling",
+    ],
+  },
+  {
+    id: "artisan-woodcraft",
+    slug: "artisan-woodcraft",
+    title: "Artisan Woodcraft",
+    subtitle: "Hand-selected solid hardwood heritage",
+    description:
+      "Sculptural dining tables, low platform bedframes, and fluted credenzas handcrafted by master woodworkers in our Osun State atelier.",
+    image: "/images/cat-dining-room.jpg",
+    itemCount: "10 Pieces",
+    tag: "Workshop Signature",
+    featuredCategory: "Dining Room",
+    highlights: [
+      "Sustainably harvested seasoned hardwood timber",
+      "Organic hand-rubbed wax and matte oil finishes",
+      "Generational heirloom joinery techniques",
+    ],
+  },
+];
+
+export function getRoomSlug(categoryName: string): string {
+  return categoryName
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
+export function getCategoryFromSlug(slug: string): string {
+  const normalized = slug.toLowerCase();
+  if (normalized === "living-room") return "Living Room";
+  if (normalized === "bedroom") return "Bedroom";
+  if (normalized === "dining-room") return "Dining Room";
+  if (normalized === "office") return "Office";
+  if (normalized === "outdoor") return "Outdoor";
+  if (normalized === "decor-and-lighting" || normalized === "decor-lighting" || normalized === "decor") return "Decor & Lighting";
+  return "All";
+}
+
+export function getProductByIdOrSlug(idOrSlug: string, productList: Product[] = BEST_SELLERS): Product | undefined {
+  const query = decodeURIComponent(idOrSlug).toLowerCase().trim();
+  return productList.find(
+    (p) =>
+      (p._id && p._id.toLowerCase() === query) ||
+      (p.id && p.id.toLowerCase() === query) ||
+      p.name.toLowerCase() === query ||
+      p.name.toLowerCase().replace(/\s+/g, "-") === query ||
+      p.name.toLowerCase().replace(/[^a-z0-9]/g, "-") === query
+  );
+}
 
 export const FEATURES = [
   {
     id: "quality",
     title: "Premium Quality",
-    description: "Crafted with the finest materials",
+    description: "Crafted with the finest timber & fabrics",
     icon: "sparkles",
   },
   {
     id: "customization",
     title: "Bespoke Customization",
-    description: "Tailored to your architecture",
+    description: "Tailored spatial sizing & finishes",
     icon: "palette",
   },
   {
-    id: "delivery",
-    title: "White-Glove Delivery",
-    description: "Seamless installation in Nigeria",
-    icon: "truck",
+    id: "guarantee",
+    title: "Artisan Guarantee",
+    description: "5-Year structural warranty",
+    icon: "shield-check",
   },
   {
     id: "support",
-    title: "Dedicated Concierge",
-    description: "Expert interior consultants",
+    title: "Design Concierge",
+    description: "Direct consultation: 08130575312",
     icon: "headphones",
   },
 ];

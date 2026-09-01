@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Providers from "@/components/Providers";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -83,6 +84,8 @@ export const metadata: Metadata = {
     description:
       "Discover handcrafted luxury furniture pieces that blend comfort, elegance, and functionality.",
     images: ["/images/hero.jpg"],
+    creator: "@sassyfurniture",
+    site: "@sassyfurniture",
   },
   robots: {
     index: true,
@@ -98,7 +101,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${jakarta.variable}`}>
       <body className="antialiased selection:bg-[#c48a48]/20 selection:text-[#8c5d28]">
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

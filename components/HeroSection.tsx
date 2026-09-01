@@ -82,14 +82,14 @@ export default function HeroSection() {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5">
               <Link
-                href="#best-sellers"
+                href="/shop"
                 className="btn-primary text-xs sm:text-sm py-2.5 px-5 rounded-lg group shadow-sm"
               >
                 <span>Shop Now</span>
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="#categories"
+                href="/rooms"
                 className="btn-secondary text-xs sm:text-sm py-2.5 px-5 rounded-lg"
               >
                 Explore Rooms

@@ -5,7 +5,7 @@ import { INITIAL_MEDIA_ASSETS, MediaAsset as MediaAssetType } from "@/data/furni
 
 export const dynamic = "force-dynamic";
 
-let inMemoryMedia: MediaAssetType[] = [...INITIAL_MEDIA_ASSETS];
+const inMemoryMedia: MediaAssetType[] = [...INITIAL_MEDIA_ASSETS];
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

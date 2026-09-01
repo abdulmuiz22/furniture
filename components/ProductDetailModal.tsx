@@ -26,7 +26,7 @@ function ProductDetailModalContent({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [notes, setNotes] = useState(
-    `Hi Sassy Furniture, I am interested in inquiring about the "${product.name}". Please provide details on custom orders and delivery.`
+    `Hi Sassy Furniture, I am interested in inquiring about the "${product.name}". Please provide details on custom dimensions, finish options, and consultation.`
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -34,7 +34,7 @@ function ProductDetailModalContent({
 
   const whatsappNumber = "2348130575312";
   const whatsappMessage = encodeURIComponent(
-    `Hello Sassy Furniture, I am inquiring about the *${product.name}* (${product.category}). Could you provide specifications, pricing, and custom options?`
+    `Hello Sassy Furniture, I am inquiring about the *${product.name}* (${product.category}). Could you provide detailed specifications, fabric swatches, and bespoke custom options?`
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -237,7 +237,7 @@ function ProductDetailModalContent({
           {/* In-Modal Inquiry Form */}
           <div className="pt-5 border-t border-[#f0ebe3]">
             <h3 className="text-sm font-serif font-bold text-[#1c1917] mb-1">
-              Request Specifications or Custom Quote
+              Request Specifications or Bespoke Consultation
             </h3>
             <p className="text-xs text-[#78716c] mb-4">
               Leave your details and our team will reach out with fabric swatches and custom dimension options.

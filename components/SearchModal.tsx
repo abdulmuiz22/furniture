@@ -6,8 +6,11 @@ import { Search, X, ArrowRight, Sparkles } from "lucide-react";
 import { useShop } from "@/context/ShopContext";
 import { Product } from "@/data/furnitureData";
 
+import { useRouter } from "next/navigation";
+
 export default function SearchModal() {
-  const { isSearchOpen, setIsSearchOpen, products, setQuickViewProduct } = useShop();
+  const router = useRouter();
+  const { isSearchOpen, setIsSearchOpen, products } = useShop();
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredProducts = useMemo(() => {
@@ -23,6 +26,11 @@ export default function SearchModal() {
   }, [searchTerm, products]);
 
   if (!isSearchOpen) return null;
+
+  const handleSelectProduct = (key: string) => {
+    setIsSearchOpen(false);
+    router.push(`/products/${encodeURIComponent(key)}`);
+  };
 
   return (
     <div
@@ -79,10 +87,7 @@ export default function SearchModal() {
                 return (
                   <div
                     key={key}
-                    onClick={() => {
-                      setIsSearchOpen(false);
-                      setQuickViewProduct(product);
-                    }}
+                    onClick={() => handleSelectProduct(key)}
                     className="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-[#fbf7f2] border border-transparent hover:border-[#ede5da] transition-all cursor-pointer group"
                   >
                     <div className="relative w-14 h-14 rounded-lg overflow-hidden bg-[#f4efe8] flex-shrink-0 border border-[#eae4da]">
@@ -107,7 +112,7 @@ export default function SearchModal() {
                       </p>
                     </div>
                     <div className="text-right flex-shrink-0 flex items-center gap-1 text-xs font-semibold text-[#b37e44]">
-                      <span>Inquire</span>
+                      <span>View &rarr;</span>
                       <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>

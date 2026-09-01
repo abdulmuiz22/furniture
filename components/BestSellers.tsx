@@ -28,8 +28,7 @@ export default function BestSellers() {
             </h2>
           </div>
           <Link
-            href="#best-sellers"
-            onClick={() => setSelectedCategory("All")}
+            href="/shop"
             className="group inline-flex items-center gap-1 text-xs sm:text-[13px] font-medium text-[#78716c] hover:text-[#b37e44] transition-colors"
           >
             <span>View All Products</span>
@@ -59,9 +58,9 @@ export default function BestSellers() {
               const hasVideo = Boolean(product.video);
 
               return (
-                <div
+                <Link
                   key={productId}
-                  onClick={() => setQuickViewProduct(product)}
+                  href={`/products/${encodeURIComponent(productId)}`}
                   className="group flex flex-col justify-between bg-white rounded-2xl p-2.5 sm:p-3 border border-[#ede7df] hover:border-[#dfd7cc] hover:shadow-md transition-all duration-300 relative cursor-pointer"
                 >
                   {/* Product Image Container */}
@@ -83,6 +82,7 @@ export default function BestSellers() {
 
                     {/* Wishlist Heart Button */}
                     <button
+                      type="button"
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
@@ -125,11 +125,11 @@ export default function BestSellers() {
                         </span>
                       </div>
                       <span className="text-[11px] font-semibold text-[#b37e44] group-hover:underline">
-                        Inquire
+                        View Details &rarr;
                       </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
